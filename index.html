@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html class="nojs html css_verticalspacer" lang="en-US">
+ <head>
+
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+  <meta name="generator" content="2018.0.0.379"/>
+  
+  <script type="text/javascript">
+   // Update the 'nojs'/'js' class on the html node
+document.documentElement.className = document.documentElement.className.replace(/\bnojs\b/g, 'js');
+
+// Check that all required assets are uploaded and up-to-date
+if(typeof Muse == "undefined") window.Muse = {}; window.Muse.assets = {"required":["museutils.js", "museconfig.js", "jquery.watch.js", "require.js", "index.css"], "outOfDate":[]};
+</script>
+  
+  <title>Home</title>
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="css/site_global.css?crc=444006867"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css?crc=4239572597" id="pagesheet"/>
+    <!--HTML Widget code-->
+  
+<style>
+	html, body { cursor: url(assets/wii-cursors.png), auto !important; }
+	a, button, input, video, audio:hover { cursor: url(Add File), auto !important; }
+</style>	
+  
+<style>
+
+.audioplayer
+{
+	height: 2.5em; /* 40 */
+	position: relative;
+	z-index: 1;
+}
+	.audioplayer-mini
+	{
+		width: 2.5em; /* 40 */
+		margin: 0 auto;
+	}
+	.audioplayer > div
+	{
+		position: absolute;
+	}
+.audioplayer {
+    color: #1F140D;
+	background: transparent;
+}
+    
+.audioplayer-playpause
+{
+	width: 2.5em; /* 40 */
+	height: 100%;
+	text-align: left;
+	text-indent: -9999px;
+	cursor: pointer;
+	z-index: 2;
+	top: 0;
+	left: 0;
+}
+	.audioplayer-mini .audioplayer-playpause
+	{
+		width: 100%;
+	}
+    
+    /* Color */
+	.audioplayer-playpause:hover,
+	.audioplayer-playpause:focus
+	{
+		background-color: ED1C24;
+	}
+	.audioplayer-playpause a
+	{
+		display: block;
+	}
+
+	.audioplayer:not(.audioplayer-playing) .audioplayer-playpause a
+	{
+		width: 0;
+		height: 0;
+		border: 0.5em solid transparent; /* 8 */
+		border-right: none;
+		border-left-color: #1F140D;
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -0.5em 0 0 -0.25em; /* 8 4 */
+	}
+
+	.audioplayer-playing .audioplayer-playpause a
+	{
+		width: 0.75em; /* 12 */
+		height: 0.75em; /* 12 */
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin: -0.375em 0 0 -0.375em; /* 6 */
+	}
+    
+		.audioplayer-playing .audioplayer-playpause a:before,
+		.audioplayer-playing .audioplayer-playpause a:after
+		{
+			width: 40%;
+			height: 100%;
+			background-color: #1F140D;
+			content: '';
+			position: absolute;
+			top: 0;
+		}
+		.audioplayer-playing .audioplayer-playpause a:before
+		{
+			left: 0;
+		}
+		.audioplayer-playing .audioplayer-playpause a:after
+		{
+			right: 0;
+		}
+        
+        
+.audioplayer-time
+{
+	width: 4.375em; /* 70 */
+	height: 100%;
+	line-height: 2.5em; /* 40 */
+	text-align: center;
+	z-index: 2;
+	top: 0;
+}
+	.audioplayer-time-current
+	{
+		border-left: 1px solid #1F140D;
+		left: 2.5em; /* 40 */
+	}
+	.audioplayer-time-duration
+	{
+		right: 2.5em; /* 40 */
+	}
+		.audioplayer-novolume .audioplayer-time-duration
+		{
+			border-right: 0;
+			right: 0;
+		}
+        
+       
+.audioplayer-bar
+{
+	height: 0.875em; /* 14 */
+	background-color: #ED1C24;
+	cursor: pointer;
+	z-index: 1;
+	top: 50%;
+	right: 6.875em; /* 110 */
+	left: 6.875em; /* 110 */
+	margin-top: -0.438em; /* 7 */
+}
+	.audioplayer-novolume .audioplayer-bar
+	{
+		right: 4.375em; /* 70 */
+	}
+	.audioplayer-bar div
+	{
+		width: 0;
+		height: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+    
+	.audioplayer-bar-loaded
+	{
+		background-color: #1F140D;
+		z-index: 1;
+	}
+
+	.audioplayer-bar-played
+	{
+        /* Accent Color */
+		background: #3CA0E0;
+		z-index: 2;
+	}
+
+.audioplayer-volume
+{
+	width: 2.5em; /* 40 */
+	height: 100%;
+	border-left: 1px solid #1F140D;
+	text-align: left;
+	text-indent: -9999px;
+	cursor: pointer;
+	z-index: 2;
+	top: 0;
+	right: 0;
+}
+
+
+	.audioplayer-volume:hover,
+	.audioplayer-volume:focus
+	{
+		background-color: #ED1C24;
+        
+
+	}
+	.audioplayer-volume-button
+	{
+		width: 100%;
+		height: 100%;
+	}
+
+
+		.audioplayer-volume-button a
+		{
+			width: 0.313em; /* 5 */
+			height: 0.375em; /* 6 */
+			background-color: #1F140D;
+			display: block;
+			position: relative;
+			z-index: 1;
+			top: 40%;
+			left: 35%;
+		}
+			.audioplayer-volume-button a:before,
+			.audioplayer-volume-button a:after
+			{
+				content: '';
+				position: absolute;
+			}
+            
+			.audioplayer-volume-button a:before
+			{
+				width: 0;
+				height: 0;
+				border: 0.5em solid transparent; /* 8 */
+				border-left: none;
+				border-right-color: #1F140D;
+				z-index: 2;
+				top: 50%;
+				right: -0.25em;
+				margin-top: -0.5em; /* 8 */
+			}
+            
+            /* Color */
+			.audioplayer:not(.audioplayer-mute) .audioplayer-volume-button a:after
+			{
+				/* "volume" icon by Nicolas Gallagher, http://nicolasgallagher.com/pure-css-gui-icons */
+				width: 0.313em; /* 5 */
+				height: 0.313em; /* 5 */
+				border: 0.25em double #1F140D; /* 4 */
+				border-width: 0.25em 0.25em 0 0; /* 4 */
+				left: 0.563em; /* 9 */
+				top: -0.063em; /* 1 */
+				-webkit-border-radius: 0 0.938em 0 0; /* 15 */
+				-moz-border-radius: 0 0.938em 0 0; /* 15 */
+				border-radius: 0 0.938em 0 0; /* 15 */
+				-webkit-transform: rotate( 45deg );
+				-moz-transform: rotate( 45deg );
+				-ms-transform: rotate( 45deg );
+				-o-transform: rotate( 45deg );
+				transform: rotate( 45deg );
+			}
+
+	.audioplayer-volume-adjust
+	{
+		width: 100%;
+		height: 6.25em; /* 100 */
+		cursor: default;
+		position: absolute;
+		left: 0;
+		top: -9999px;
+		background: #ED1C24;
+        
+
+        
+	}
+		.audioplayer-volume:not(:hover) .audioplayer-volume-adjust
+		{
+			opacity: 0;
+		}
+		.audioplayer-volume:hover .audioplayer-volume-adjust
+		{
+			top: auto;
+			bottom: 100%;
+		}
+		.audioplayer-volume-adjust > div
+		{
+			width: 40%;
+			height: 80%;
+			background-color: #1F140D;
+			cursor: pointer;
+			position: relative;
+			z-index: 1;
+			margin: 30% auto 0;
+		}
+        
+
+			.audioplayer-volume-adjust div div
+			{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+                /* Accent Color */
+				background: #3CA0E0;
+			}
+	.audioplayer-novolume .audioplayer-volume
+	{
+		display: none;
+	} 
+</style>
+
+ </head>
+ <body>
+
+  <div class="clearfix" id="page"><!-- group -->
+   <div class="clip_frame grpelem" id="u1719"><!-- image -->
+    <img class="block" id="u1719_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1708"><!-- image -->
+    <img class="block" id="u1708_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="785" height="510"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1647"><!-- image -->
+    <img class="block" id="u1647_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1660"><!-- image -->
+    <img class="block" id="u1660_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1636"><!-- image -->
+    <img class="block" id="u1636_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="900" height="585"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1557"><!-- image -->
+    <img class="block" id="u1557_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1570"><!-- image -->
+    <img class="block" id="u1570_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1583"><!-- image -->
+    <img class="block" id="u1583_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1596"><!-- image -->
+    <img class="block" id="u1596_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1527"><!-- image -->
+    <img class="block" id="u1527_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="742" height="482"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1609"><!-- image -->
+    <img class="block" id="u1609_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1477"><!-- image -->
+    <img class="block" id="u1477_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1490"><!-- image -->
+    <img class="block" id="u1490_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1503"><!-- image -->
+    <img class="block" id="u1503_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1516"><!-- image -->
+    <img class="block" id="u1516_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1431"><!-- image -->
+    <img class="block" id="u1431_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1444"><!-- image -->
+    <img class="block" id="u1444_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1457"><!-- image -->
+    <img class="block" id="u1457_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1470"><!-- image -->
+    <img class="block" id="u1470_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="801" height="521"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1388"><!-- image -->
+    <img class="block" id="u1388_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1375"><!-- image -->
+    <img class="block" id="u1375_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="561" height="365"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1401"><!-- image -->
+    <img class="block" id="u1401_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1414"><!-- image -->
+    <img class="block" id="u1414_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1325"><!-- image -->
+    <img class="block" id="u1325_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1338"><!-- image -->
+    <img class="block" id="u1338_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="649" height="422"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1351"><!-- image -->
+    <img class="block" id="u1351_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1364"><!-- image -->
+    <img class="block" id="u1364_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="618" height="402"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1279"><!-- image -->
+    <img class="block" id="u1279_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1292"><!-- image -->
+    <img class="block" id="u1292_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="792" height="515"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1305"><!-- image -->
+    <img class="block" id="u1305_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1318"><!-- image -->
+    <img class="block" id="u1318_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1233"><!-- image -->
+    <img class="block" id="u1233_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1246"><!-- image -->
+    <img class="block" id="u1246_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1259"><!-- image -->
+    <img class="block" id="u1259_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1272"><!-- image -->
+    <img class="block" id="u1272_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1181"><!-- image -->
+    <img class="block" id="u1181_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="898" height="584"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1194"><!-- image -->
+    <img class="block" id="u1194_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1207"><!-- image -->
+    <img class="block" id="u1207_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="915" height="595"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1220"><!-- image -->
+    <img class="block" id="u1220_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="926" height="602"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1085"><!-- image -->
+    <img class="position_content" id="u1085_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="860" height="559"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1092"><!-- image -->
+    <img class="position_content" id="u1092_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="694" height="451"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1099"><!-- image -->
+    <img class="position_content" id="u1099_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="882" height="573"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1045"><!-- image -->
+    <img class="position_content" id="u1045_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="802" height="521"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1024"><!-- image -->
+    <img class="position_content" id="u1024_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="480" height="312"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1031"><!-- image -->
+    <img class="position_content" id="u1031_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="587" height="382"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1017"><!-- image -->
+    <img class="position_content" id="u1017_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="709" height="461"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1038"><!-- image -->
+    <img class="position_content" id="u1038_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="673" height="437"/>
+   </div>
+   <div class="clearfix grpelem" id="u478"><!-- group -->
+    <div class="clip_frame clearfix grpelem" id="u1002"><!-- image -->
+     <img class="position_content" id="u1002_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="632" height="411"/>
+    </div>
+    <div class="clip_frame clearfix grpelem" id="u988"><!-- image -->
+     <img class="position_content" id="u988_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="480" height="312"/>
+    </div>
+    <div class="clip_frame clearfix grpelem" id="u995"><!-- image -->
+     <img class="position_content" id="u995_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="427" height="278"/>
+    </div>
+    <div class="clip_frame clearfix grpelem" id="u974"><!-- image -->
+     <img class="position_content" id="u974_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="694" height="451"/>
+    </div>
+    <div class="clip_frame clearfix grpelem" id="u536"><!-- image -->
+     <img class="position_content" id="u536_img" src="images/background%20proper277x181.jpg?crc=153540010" alt="" width="277" height="180"/>
+    </div>
+    <div class="clip_frame clearfix grpelem" id="u546"><!-- image -->
+     <img class="position_content" id="u546_img" src="images/background%20proper277x180.jpg?crc=249591773" alt="" width="276" height="180"/>
+    </div>
+    <div class="clip_frame grpelem" id="u103"><!-- image -->
+     <img class="block" id="u103_img" src="images/television%20set.jpg?crc=4230165449" alt="" width="251" height="167"/>
+    </div>
+    <div class="clip_frame grpelem" id="u113"><!-- image -->
+     <img class="block" id="u113_img" src="images/television%20set.jpg?crc=4230165449" alt="" width="251" height="167"/>
+    </div>
+    <div class="clip_frame grpelem" id="u120"><!-- image -->
+     <img class="block" id="u120_img" src="images/television%20set.jpg?crc=4230165449" alt="" width="251" height="167"/>
+    </div>
+    <div class="grpelem" id="u185"><!-- content --></div>
+    <div class="size_fixed grpelem" id="u193"><!-- custom html -->
+    </div>
+    <div class="size_fixed grpelem" id="u198"><!-- custom html -->
+     
+<video width="100%" height="100%" title="Video tooltip on hover." poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5685.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u203"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0019.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="clip_frame clearfix grpelem" id="u557"><!-- image -->
+     <img class="position_content" id="u557_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="427" height="278"/>
+    </div>
+    <div class="clip_frame grpelem" id="u580"><!-- image -->
+     <img class="block" id="u580_img" src="images/background%20proper-crop-u580.jpg?crc=410388086" alt="" width="446" height="229"/>
+    </div>
+    <div class="clip_frame grpelem" id="u597"><!-- image -->
+     <img class="block" id="u597_img" src="images/wall.jpg?crc=3794192694" alt="" width="500" height="220"/>
+    </div>
+    <div class="clip_frame grpelem" id="u607"><!-- image -->
+     <img class="block" id="u607_img" src="images/wall.jpg?crc=3794192694" alt="" width="500" height="220"/>
+    </div>
+    <div class="clip_frame grpelem" id="u621"><!-- image -->
+     <img class="block" id="u621_img" src="images/wall.jpg?crc=3794192694" alt="" width="500" height="220"/>
+    </div>
+    <div class="clip_frame grpelem" id="u632"><!-- image -->
+     <img class="block" id="u632_img" src="images/carpet.jpg?crc=445044854" alt="" width="282" height="49"/>
+    </div>
+    <div class="clip_frame grpelem" id="u679"><!-- image -->
+     <img class="block" id="u679_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u690"><!-- image -->
+     <img class="block" id="u690_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u697"><!-- image -->
+     <img class="block" id="u697_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u704"><!-- image -->
+     <img class="block" id="u704_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u718"><!-- image -->
+     <img class="block" id="u718_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u725"><!-- image -->
+     <img class="block" id="u725_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u732"><!-- image -->
+     <img class="block" id="u732_img" src="images/carpet.jpg?crc=445044854" alt="" width="327" height="56"/>
+    </div>
+    <div class="clip_frame grpelem" id="u739"><!-- image -->
+     <img class="block" id="u739_img" src="images/carpet.jpg?crc=445044854" alt="" width="397" height="68"/>
+    </div>
+    <div class="clip_frame grpelem" id="u760"><!-- image -->
+     <img class="block" id="u760_img" src="images/crop%20television%20set221x191.jpg?crc=248815241" alt="" width="221" height="190"/>
+    </div>
+    <div class="clip_frame grpelem" id="u781"><!-- image -->
+     <img class="block" id="u781_img" src="images/wall.jpg?crc=3794192694" alt="" width="500" height="220"/>
+    </div>
+    <div class="clip_frame grpelem" id="u94"><!-- image -->
+     <img class="block" id="u94_img" src="images/gif_anim_open_sign.gif?crc=37006908" alt="" width="182" height="88"/>
+    </div>
+    <div class="clip_frame grpelem" id="u770"><!-- image -->
+     <img class="block" id="u770_img" src="images/crop%20television%20set126x109.jpg?crc=9534008" alt="" width="126" height="109"/>
+    </div>
+    <div class="clip_frame grpelem" id="u821"><!-- image -->
+     <img class="block" id="u821_img" src="images/crop%20television%20set221x191.jpg?crc=248815241" alt="" width="221" height="190"/>
+    </div>
+    <div class="clip_frame grpelem" id="u828"><!-- image -->
+     <img class="block" id="u828_img" src="images/crop%20television%20set94x81.jpg?crc=3802708755" alt="" width="93" height="80"/>
+    </div>
+    <div class="clip_frame grpelem" id="u835"><!-- image -->
+     <img class="block" id="u835_img" src="images/crop%20television%20set154x133.jpg?crc=498597202" alt="" width="154" height="133"/>
+    </div>
+    <div class="clip_frame grpelem" id="u854"><!-- image -->
+     <img class="block" id="u854_img" src="images/crop%20television%20set112x97.jpg?crc=3838551651" alt="" width="112" height="97"/>
+    </div>
+    <div class="clip_frame grpelem" id="u862"><!-- image -->
+     <img class="block" id="u862_img" src="images/crop%20television%20set221x191.jpg?crc=248815241" alt="" width="221" height="190"/>
+    </div>
+    <div class="clip_frame grpelem" id="u882"><!-- image -->
+     <img class="block" id="u882_img" src="images/carpet.jpg?crc=445044854" alt="" width="426" height="73"/>
+    </div>
+    <div class="clip_frame grpelem" id="u915"><!-- image -->
+     <img class="block" id="u915_img" src="images/crop%20television%20set96x83.jpg?crc=207850900" alt="" width="96" height="83"/>
+    </div>
+    <div class="clip_frame grpelem" id="u928"><!-- image -->
+     <img class="block" id="u928_img" src="images/crop%20television%20set130x112.jpg?crc=4209875770" alt="" width="129" height="111"/>
+    </div>
+    <div class="size_fixed grpelem" id="u188"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"     loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u461"><!-- custom html -->
+     
+		<div id="wrapper">
+			<audio preload="auto" controls>
+             <source src="assets/final-website-sound.mp3"><!-- Hide -->
+			<!--<source src="Add File"><!-- Hide -->
+			<!--<source src="Add File"><!-- Hide -->
+			</audio>
+
+			</div>
+
+    </div>
+    <div class="size_fixed grpelem" id="u1869"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0061.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u1874"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5732.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u1884"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5740.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u1889"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5690.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u1894"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5699.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u1899"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5739.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u2009"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u2014"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_1119.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+    <div class="size_fixed grpelem" id="u2049"><!-- custom html -->
+     
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5716.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+    </div>
+   </div>
+   <div class="clip_frame grpelem" id="u711"><!-- image -->
+    <img class="block" id="u711_img" src="images/carpet.jpg?crc=445044854" alt="" width="503" height="86"/>
+   </div>
+   <div class="clip_frame grpelem" id="u889"><!-- image -->
+    <img class="block" id="u889_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="272" height="234"/>
+   </div>
+   <div class="clip_frame grpelem" id="u902"><!-- image -->
+    <img class="block" id="u902_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="276" height="238"/>
+   </div>
+   <div class="clip_frame grpelem" id="u941"><!-- image -->
+    <img class="block" id="u941_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u963"><!-- image -->
+    <img class="block" id="u963_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1056"><!-- image -->
+    <img class="block" id="u1056_img" src="images/wall.jpg?crc=3794192694" alt="" width="500" height="220"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1063"><!-- image -->
+    <img class="block" id="u1063_img" src="images/wall.jpg?crc=3794192694" alt="" width="805" height="354"/>
+   </div>
+   <div class="clip_frame clearfix grpelem" id="u1074"><!-- image -->
+    <img class="position_content" id="u1074_img" src="images/background%20proper.jpg?crc=266089156" alt="" width="646" height="420"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1110"><!-- image -->
+    <img class="block" id="u1110_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="439" height="378"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1117"><!-- image -->
+    <img class="block" id="u1117_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1124"><!-- image -->
+    <img class="block" id="u1124_img" src="images/crop%20television%20set208x179.jpg?crc=3869576899" alt="" width="207" height="179"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1131"><!-- image -->
+    <img class="block" id="u1131_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1138"><!-- image -->
+    <img class="block" id="u1138_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1145"><!-- image -->
+    <img class="block" id="u1145_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="343" height="296"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1152"><!-- image -->
+    <img class="block" id="u1152_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="384" height="331"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1741"><!-- image -->
+    <img class="block" id="u1741_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="412" height="355"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1748"><!-- image -->
+    <img class="block" id="u1748_img" src="images/crop%20television%20set134x116.jpg?crc=3915772292" alt="" width="134" height="115"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1755"><!-- image -->
+    <img class="block" id="u1755_img" src="images/crop%20television%20set182x157.jpg?crc=3965429267" alt="" width="182" height="157"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1762"><!-- image -->
+    <img class="block" id="u1762_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1769"><!-- image -->
+    <img class="block" id="u1769_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="395" height="341"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1776"><!-- image -->
+    <img class="block" id="u1776_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1783"><!-- image -->
+    <img class="block" id="u1783_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1790"><!-- image -->
+    <img class="block" id="u1790_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1801"><!-- image -->
+    <img class="block" id="u1801_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1808"><!-- image -->
+    <img class="block" id="u1808_img" src="images/crop%20television%20set232x200.jpg?crc=4271299021" alt="" width="231" height="199"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1815"><!-- image -->
+    <img class="block" id="u1815_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1822"><!-- image -->
+    <img class="block" id="u1822_img" src="images/crop%20television%20set83x71.jpg?crc=4278811380" alt="" width="82" height="71"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1829"><!-- image -->
+    <img class="block" id="u1829_img" src="images/crop%20television%20set.jpg?crc=4062581932" alt="" width="277" height="239"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1836"><!-- image -->
+    <img class="block" id="u1836_img" src="images/crop%20television%20set104x90.jpg?crc=167247876" alt="" width="104" height="89"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1843"><!-- image -->
+    <img class="block" id="u1843_img" src="images/crop%20television%20set108x93.jpg?crc=4052470345" alt="" width="107" height="93"/>
+   </div>
+   <div class="clip_frame grpelem" id="u1850"><!-- image -->
+    <img class="block" id="u1850_img" src="images/crop%20television%20set218x188.jpg?crc=306823038" alt="" width="218" height="188"/>
+   </div>
+   <div class="size_fixed grpelem" id="u1879"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_1088.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1904"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1909"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_1119.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1914"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"     loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1919"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5702.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1924"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0051.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1929"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0019.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1934"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5716.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1939"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1944"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5733.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1949"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5739.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1954"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0048.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1959"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5684.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1964"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1969"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5685.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1974"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5710.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1979"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1984"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_1120.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1989"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"     loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1994"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0061.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u1999"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5702.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u2004"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_1094.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u2019"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_0038.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u2024"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/vhs-tape-glitch-and-static-noise--cc-by-4.0--in-camera.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u2029"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5733.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u2034"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_5713.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="size_fixed grpelem" id="u2039"><!-- custom html -->
+    
+<video width="100%" height="100%" title="" poster="Add File"   muted loop  autoplay>
+  <source src="assets/mvi_1095.mp4" type="video/mp4">
+  <source src="Add File" type="video/ogg">
+  <source src="Add File" type="video/webm">
+</video>
+
+   </div>
+   <div class="verticalspacer" data-offset-top="1833" data-content-above-spacer="1832" data-content-below-spacer="61"></div>
+  </div>
+  <!-- JS includes -->
+  <script type="text/javascript">
+   if (document.location.protocol != 'https:') document.write('\x3Cscript src="http://musecdn.businesscatalyst.com/scripts/4.0/jquery-1.8.3.min.js" type="text/javascript">\x3C/script>');
+</script>
+  <script type="text/javascript">
+   window.jQuery || document.write('\x3Cscript src="scripts/jquery-1.8.3.min.js?crc=209076791" type="text/javascript">\x3C/script>');
+</script>
+  <!-- Other scripts -->
+  <script type="text/javascript">
+   // Decide weather to suppress missing file error or not based on preference setting
+var suppressMissingFileError = false
+</script>
+  <script type="text/javascript">
+   window.Muse.assets.check=function(d){if(!window.Muse.assets.checked){window.Muse.assets.checked=!0;var b={},c=function(a,b){if(window.getComputedStyle){var c=window.getComputedStyle(a,null);return c&&c.getPropertyValue(b)||c&&c[b]||""}if(document.documentElement.currentStyle)return(c=a.currentStyle)&&c[b]||a.style&&a.style[b]||"";return""},a=function(a){if(a.match(/^rgb/))return a=a.replace(/\s+/g,"").match(/([\d\,]+)/gi)[0].split(","),(parseInt(a[0])<<16)+(parseInt(a[1])<<8)+parseInt(a[2]);if(a.match(/^\#/))return parseInt(a.substr(1),
+16);return 0},g=function(g){for(var f=document.getElementsByTagName("link"),h=0;h<f.length;h++)if("text/css"==f[h].type){var i=(f[h].href||"").match(/\/?css\/([\w\-]+\.css)\?crc=(\d+)/);if(!i||!i[1]||!i[2])break;b[i[1]]=i[2]}f=document.createElement("div");f.className="version";f.style.cssText="display:none; width:1px; height:1px;";document.getElementsByTagName("body")[0].appendChild(f);for(h=0;h<Muse.assets.required.length;){var i=Muse.assets.required[h],l=i.match(/([\w\-\.]+)\.(\w+)$/),k=l&&l[1]?
+l[1]:null,l=l&&l[2]?l[2]:null;switch(l.toLowerCase()){case "css":k=k.replace(/\W/gi,"_").replace(/^([^a-z])/gi,"_$1");f.className+=" "+k;k=a(c(f,"color"));l=a(c(f,"backgroundColor"));k!=0||l!=0?(Muse.assets.required.splice(h,1),"undefined"!=typeof b[i]&&(k!=b[i]>>>24||l!=(b[i]&16777215))&&Muse.assets.outOfDate.push(i)):h++;f.className="version";break;case "js":h++;break;default:throw Error("Unsupported file type: "+l);}}d?d().jquery!="1.8.3"&&Muse.assets.outOfDate.push("jquery-1.8.3.min.js"):Muse.assets.required.push("jquery-1.8.3.min.js");
+f.parentNode.removeChild(f);if(Muse.assets.outOfDate.length||Muse.assets.required.length)f="Some files on the server may be missing or incorrect. Clear browser cache and try again. If the problem persists please contact website author.",g&&Muse.assets.outOfDate.length&&(f+="\nOut of date: "+Muse.assets.outOfDate.join(",")),g&&Muse.assets.required.length&&(f+="\nMissing: "+Muse.assets.required.join(",")),suppressMissingFileError?(f+="\nUse SuppressMissingFileError key in AppPrefs.xml to show missing file error pop up.",console.log(f)):alert(f)};location&&location.search&&location.search.match&&location.search.match(/muse_debug/gi)?
+setTimeout(function(){g(!0)},5E3):g()}};
+var muse_init=function(){require.config({baseUrl:""});require(["jquery","museutils","whatinput","jquery.watch"],function(d){var $ = d;$(document).ready(function(){try{
+window.Muse.assets.check($);/* body */
+Muse.Utils.transformMarkupToFixBrowserProblemsPreInit();/* body */
+Muse.Utils.prepHyperlinks(true);/* body */
+Muse.Utils.makeButtonsVisibleAfterSettingMinWidth();/* body */
+Muse.Utils.fullPage('#page');/* 100% height page */
+Muse.Utils.showWidgetsWhenReady();/* body */
+Muse.Utils.transformMarkupToFixBrowserProblems();/* body */
+}catch(b){if(b&&"function"==typeof b.notify?b.notify():Muse.Assert.fail("Error calling selector function: "+b),false)throw b;}})})};
+
+</script>
+  <!-- RequireJS script -->
+  <script src="scripts/require.js?crc=4157109226" type="text/javascript" async data-main="scripts/museconfig.js?crc=380897831" onload="if (requirejs) requirejs.onError = function(requireType, requireModule) { if (requireType && requireType.toString && requireType.toString().indexOf && 0 <= requireType.toString().indexOf('#scripterror')) window.Muse.assets.check(); }" onerror="window.Muse.assets.check();"></script>
+  
+  <!--HTML Widget code-->
+  
+<script>
+!function(e,t,a){var i="ontouchstart"in t,n=i?"touchstart":"mousedown",o=i?"touchmove":"mousemove",d=i?"touchcancel":"mouseup",u=function(e){var t=e/3600,a=Math.floor(t),i=e%3600/60,n=Math.floor(i),o=Math.ceil(e%3600%60);return o>59&&(o=0,n=Math.ceil(i)),n>59&&(n=0,a=Math.ceil(t)),(0==a?"":a>0&&a.toString().length<2?"0"+a+":":a+":")+(n.toString().length<2?"0"+n:n)+":"+(o.toString().length<2?"0"+o:o)},l=function(e){var t=a.createElement("audio");return!(!t.canPlayType||!t.canPlayType("audio/"+e.split(".").pop().toLowerCase()+";").replace(/no/,""))};e.fn.audioPlayer=function(t){var t=e.extend({classPrefix:"audioplayer",strPlay:"Play",strPause:"Pause",strVolume:"Volume"},t),a={},r={playPause:"playpause",playing:"playing",stopped:"stopped",time:"time",timeCurrent:"time-current",timeDuration:"time-duration",bar:"bar",barLoaded:"bar-loaded",barPlayed:"bar-played",volume:"volume",volumeButton:"volume-button",volumeAdjust:"volume-adjust",noVolume:"novolume",muted:"muted",mini:"mini"};for(var s in r)a[s]=t.classPrefix+"-"+r[s];return this.each(function(){if("audio"!=e(this).prop("tagName").toLowerCase())return!1;var r=e(this),s=r.attr("src"),v=r.get(0).getAttribute("autoplay"),v=""===v||"autoplay"===v?!0:!1,m=r.get(0).getAttribute("loop"),m=""===m||"loop"===m?!0:!1,c=!1;"undefined"==typeof s?r.find("source").each(function(){return s=e(this).attr("src"),"undefined"!=typeof s&&l(s)?(c=!0,!1):void 0}):l(s)&&(c=!0);var h=e('<div class="'+t.classPrefix+'">'+(c?e("<div>").append(r.eq(0).clone()).html():'<embed src="'+s+'" width="0" height="0" volume="100" autostart="'+v.toString()+'" loop="'+m.toString()+'" />')+'<div class="'+a.playPause+'" title="'+t.strPlay+'"><a href="#">'+t.strPlay+"</a></div></div>"),f=h.find(c?"audio":"embed"),f=f.get(0);if(c){h.find("audio").css({width:0,height:0,visibility:"hidden"}),h.append('<div class="'+a.time+" "+a.timeCurrent+'"></div><div class="'+a.bar+'"><div class="'+a.barLoaded+'"></div><div class="'+a.barPlayed+'"></div></div><div class="'+a.time+" "+a.timeDuration+'"></div><div class="'+a.volume+'"><div class="'+a.volumeButton+'" title="'+t.strVolume+'"><a href="#">'+t.strVolume+'</a></div><div class="'+a.volumeAdjust+'"><div><div></div></div></div></div>');var p=h.find("."+a.bar),y=h.find("."+a.barPlayed),g=h.find("."+a.barLoaded),b=h.find("."+a.timeCurrent),P=h.find("."+a.timeDuration),C=h.find("."+a.volumeButton),E=h.find("."+a.volumeAdjust+" > div"),w=0,M=function(e){theRealEvent=i?e.originalEvent.touches[0]:e,f.currentTime=Math.round(f.duration*(theRealEvent.pageX-p.offset().left)/p.width())},L=function(e){theRealEvent=i?e.originalEvent.touches[0]:e,f.volume=Math.abs((theRealEvent.pageY-(E.offset().top+E.height()))/E.height())},S=function(){var e=setInterval(function(){return f.buffered.length<1?!0:(g.width(f.buffered.end(0)/f.duration*100+"%"),void(Math.floor(f.buffered.end(0))>=Math.floor(f.duration)&&clearInterval(e)))},100)},V=f.volume,j=f.volume=.111;Math.round(1e3*f.volume)/1e3==j?f.volume=V:h.addClass(a.noVolume),P.html("…"),b.html(u(0)),f.addEventListener("loadeddata",function(){S(),P.html(e.isNumeric(f.duration)?u(f.duration):"…"),E.find("div").height(100*f.volume+"%"),w=f.volume}),f.addEventListener("timeupdate",function(){b.html(u(f.currentTime)),y.width(f.currentTime/f.duration*100+"%")}),f.addEventListener("volumechange",function(){E.find("div").height(100*f.volume+"%"),f.volume>0&&h.hasClass(a.muted)&&h.removeClass(a.muted),f.volume<=0&&!h.hasClass(a.muted)&&h.addClass(a.muted)}),f.addEventListener("ended",function(){h.removeClass(a.playing).addClass(a.stopped)}),p.on(n,function(e){M(e),p.on(o,function(e){M(e)})}).on(d,function(){p.unbind(o)}),C.on("click",function(){return h.hasClass(a.muted)?(h.removeClass(a.muted),f.volume=w):(h.addClass(a.muted),w=f.volume,f.volume=0),!1}),E.on(n,function(e){L(e),E.on(o,function(e){L(e)})}).on(d,function(){E.unbind(o)})}else h.addClass(a.mini);h.addClass(v?a.playing:a.stopped),h.find("."+a.playPause).on("click",function(){return h.hasClass(a.playing)?(e(this).attr("title",t.strPlay).find("a").html(t.strPlay),h.removeClass(a.playing).addClass(a.stopped),c?f.pause():f.Stop()):(e(this).attr("title",t.strPause).find("a").html(t.strPause),h.addClass(a.playing).removeClass(a.stopped),c?f.play():f.Play()),!1}),r.replaceWith(h)}),this}}(jQuery,window,document);
+</script>
+<script>
+$( 'audio' ).audioPlayer(
+{
+	strPlay: 'Play', // default value: 'Play'
+	strPause: 'Pause', // default value: 'Pause'
+	strVolume: 'Volume', // default value: 'Volume'
+});
+</script>
+
+
+   </body>
+</html>
